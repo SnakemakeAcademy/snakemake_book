@@ -1,0 +1,205 @@
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ echo "# snakemake_book" >> README.md
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ pwd
+/home/xie186/snakemake_academy/snakemake_book
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ ls
+01-intro.Rmd       04-application.Rmd  [0m[01;34m_book[0m            _bookdown.yml  packages.bib  snakemake_book.Rproj
+02-literature.Rmd  05-summary.Rmd      book.bib         index.Rmd      preamble.tex  style.css
+03-method.Rmd      06-references.Rmd   [01;34m_bookdown_files[0m  _output.yml    README.md
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git init
+Initialized empty Git repository in /home/xie186/snakemake_academy/snakemake_book/.git/
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config --lst[K[Kist
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git add README.md
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config --list
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git a[Kconfig --local user.exmail x[K""x"i"e"1"8"6"@"p"u"r"d"u"e"."e"d"u"
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config --local user.exmail "xie186@purdue.edu"[C[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P "xie186"[1P "xie186"[1P "xie186"[1P "xie186"[1P "xie186"[1P "xie186"n "xie186"a "xie186"m "xie186"e "xie186"
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git [K[K[K[Kgit commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ git remote add origin https://github.com/SnakemakeAcademy/snakemake_book.git
+]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
+]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[C[Cnfig --local user.name "xie186"
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config --local user.name "xie186"[C[C[C[C[C[C[C[12Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[C[Cnfig --local user.name "xie186"exmail "xie186@purdue.edu"
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ fi c[K[K[K[Kgit config ==;[K[K--[K[K[K--list
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+user.exmail=xie186@purdue.edu
+user.name=xie186
+remote.origin.url=https://github.com/SnakemakeAcademy/snakemake_book.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ gt[Kit commit m[Km[K-m ""U"p"d"a"t"e"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[13Pname "xie186"[1P[1P[1P[1P[1P[1P[1P
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.name "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[13Pname "xie186"[C[C[C[C[C[C[C[12Ppush -u origin master[C[C[C[C[C[C[Cconfig --local user.name "xie186"exmail "xie186@purdue.edu"[1P[1P[1P[1P[1P[1P[1P
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pname "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cist[K
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+user.exmail=xie186@purdue.edu
+user.name=xie186
+remote.origin.url=https://github.com/SnakemakeAcademy/snakemake_book.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config --list user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pname "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[Cnfig  user.name "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[13Pname "xie186"[C[C[C[C[C[C[C[12Ppush -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
+]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ git remote add origin https://github.com/SnakemakeAcademy/snakemake_book.git
+fatal: remote origin already exists.
+]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[C[8Pconfig --list user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[15Pmmit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[C[8Pconfig --list user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pname "xie186"
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.name "xie186"exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[15Pmmit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[Cpush -u origin master[K[C[C[C[C[C[C[Ccommit -m "first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m ""U"p"d"a"t"e"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ vi .git/
+branches/    config       description  HEAD         hooks/       index        info/        objects/     refs/        
+ $ vi .git/config 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ git ad[K[Kpsuh or[K[K[K[K[K[Kush origin master
+error: src refspec master does not match any.
+error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
+]0;/home/xie186/snakemake_academy/snakemake_book $ git push origin master[C[C[C[7Pvi .git/config [C[C[Cgit commit -m "Update"first commit"[6PUpdate"first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ ls
+01-intro.Rmd       04-application.Rmd  [0m[01;34m_book[0m            _bookdown.yml  packages.bib  snakemake_book.Rproj
+02-literature.Rmd  05-summary.Rmd      book.bib         index.Rmd      preamble.tex  style.css
+03-method.Rmd      06-references.Rmd   [01;34m_bookdown_files[0m  _output.yml    README.md
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 
+]0;/home/xie186/snakemake_academy/snakemake_book $ 

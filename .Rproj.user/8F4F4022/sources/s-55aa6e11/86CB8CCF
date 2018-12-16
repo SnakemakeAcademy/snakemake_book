@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1544999626718.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1248109858",
+    "id" : "86CB8CCF",
+    "lastKnownWriteTime" : 1544999622,
+    "last_content_update" : 1544999622,
+    "path" : "~/snakemake_academy/snakemake_book/_output.yml",
+    "project_path" : "_output.yml",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "yaml"
+}
