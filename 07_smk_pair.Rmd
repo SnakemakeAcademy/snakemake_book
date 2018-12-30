@@ -1,0 +1,62 @@
+
+# Paired samples for snakemake
+
+sfsd @SMK_pair
+
+
+```
+# read https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/iDnr3PIcsfE/x-qQvzWBBgAJ
+# https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J
+
+aDict = {"B":"inputG1", "A":"inputG1", "C":"inputG2"}
+
+rule all:
+	input: ["C.bed", "A.bed", "B.bed"]
+
+def get_files(wildcards):
+	case = wildcards.case
+	control = aDict[case]
+	return [case + ".sorted.bam", control + ".sorted.bam"]
+
+rule call_peak:
+	input: get_files
+	output: "{case}.bed"
+	shell:
+	    """
+	    echo macs14 -t {input[0]} -c {input[1]} -n {wildcards.case}
+	    touch {output}
+	    """
+```
+
+
+## Convert dictionary content to `wildcards`
+
+
+```
+SAMPLES="BMAL1-ZT10_rep1 BMAL1-ZT10_rep2 BMAL1-ZT22_rep1".split()
+COMPARES={
+        "10vs22" : ("BMAL1-ZT10_rep1 BMAL1-ZT10_rep2".split(), 
+                           ["BMAL1-ZT22_rep1"]),
+        "r1vsr2" : (["BMAL1-ZT10_rep1"], 
+                         ["BMAL1-ZT10_rep2"])}
+
+rule All:
+     input:  expand("diffexp/{compare}.diff", compare=COMPARES.keys())
+rule GfoldDiff:
+     input: expand("diffexp/{sample}.cnt", sample=COMPARES["{wildcards.compare}"])
+     output: "diffexp/{compare}.diff"
+```
+
+
+```
+def gfold_group1(wildcards):
+    return ["diffexp/{0}.cnt".format(i) for i in COMPARES[wildcards.compare][0]]
+def gfold_group2(wildcards):
+    return ["diffexp/{0}.cnt".format(i) for i in COMPARES[wildcards.compare][1]]
+rule GfoldDiff:
+     input: group1=gfold_group1,group2=gfold_group2
+     output: "diffexp/{compare}.diff"
+     run:
+          shell("gfold diff -s1 {group1} -s2 {group2} -o {output}".format(
+          group1=",".join(group1), group2=",".join(group2), output=output))
+```

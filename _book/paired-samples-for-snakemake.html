@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
+<link rel="prev" href="references.html">
 
-<link rel="next" href="intro.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -100,22 +100,69 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Reproducible and scalable workflows with Snakemake</h1>
-<h4 class="date"><em>2018-12-30</em></h4>
-</div>
-<div id="prerequisites" class="section level1">
-<h1><span class="header-section-number">Chapter 1</span> Prerequisites</h1>
-<p>This is a book written for the reseasrchers who want to learn how to use Snakemake to build repruducible and scalable workflows. We assume the readers have already been familiar with NGS data analysis. For example, a tipycal workflow of RNA-seq data includes quality control of the reads, read alignment, read count extraction, DEG detection, GO and KEGG enrichment analysis.</p>
+<div id="paired-samples-for-snakemake" class="section level1">
+<h1><span class="header-section-number">Chapter 7</span> Paired samples for snakemake</h1>
+<p>sfsd <span class="citation">Tang (n.d.)</span></p>
+<pre><code># read https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/iDnr3PIcsfE/x-qQvzWBBgAJ
+# https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J
 
+aDict = {&quot;B&quot;:&quot;inputG1&quot;, &quot;A&quot;:&quot;inputG1&quot;, &quot;C&quot;:&quot;inputG2&quot;}
+
+rule all:
+    input: [&quot;C.bed&quot;, &quot;A.bed&quot;, &quot;B.bed&quot;]
+
+def get_files(wildcards):
+    case = wildcards.case
+    control = aDict[case]
+    return [case + &quot;.sorted.bam&quot;, control + &quot;.sorted.bam&quot;]
+
+rule call_peak:
+    input: get_files
+    output: &quot;{case}.bed&quot;
+    shell:
+        &quot;&quot;&quot;
+        echo macs14 -t {input[0]} -c {input[1]} -n {wildcards.case}
+        touch {output}
+        &quot;&quot;&quot;</code></pre>
+<div id="convert-dictionary-content-to-wildcards" class="section level2">
+<h2><span class="header-section-number">7.1</span> Convert dictionary content to <code>wildcards</code></h2>
+<pre><code>SAMPLES=&quot;BMAL1-ZT10_rep1 BMAL1-ZT10_rep2 BMAL1-ZT22_rep1&quot;.split()
+COMPARES={
+        &quot;10vs22&quot; : (&quot;BMAL1-ZT10_rep1 BMAL1-ZT10_rep2&quot;.split(), 
+                           [&quot;BMAL1-ZT22_rep1&quot;]),
+        &quot;r1vsr2&quot; : ([&quot;BMAL1-ZT10_rep1&quot;], 
+                         [&quot;BMAL1-ZT10_rep2&quot;])}
+
+rule All:
+     input:  expand(&quot;diffexp/{compare}.diff&quot;, compare=COMPARES.keys())
+rule GfoldDiff:
+     input: expand(&quot;diffexp/{sample}.cnt&quot;, sample=COMPARES[&quot;{wildcards.compare}&quot;])
+     output: &quot;diffexp/{compare}.diff&quot;</code></pre>
+<pre><code>def gfold_group1(wildcards):
+    return [&quot;diffexp/{0}.cnt&quot;.format(i) for i in COMPARES[wildcards.compare][0]]
+def gfold_group2(wildcards):
+    return [&quot;diffexp/{0}.cnt&quot;.format(i) for i in COMPARES[wildcards.compare][1]]
+rule GfoldDiff:
+     input: group1=gfold_group1,group2=gfold_group2
+     output: &quot;diffexp/{compare}.diff&quot;
+     run:
+          shell(&quot;gfold diff -s1 {group1} -s2 {group2} -o {output}&quot;.format(
+          group1=&quot;,&quot;.join(group1), group2=&quot;,&quot;.join(group2), output=output))</code></pre>
+
+<div id="refs" class="references">
+<div>
+<p>Tang, Tommy. n.d. “Deal with Paired Samples for Snakemake.” Diving into Genetics; Genomics (blog). <a href="http://crazyhottommy.blogspot.com/2016/06/how-to-deal-with-paired-samples-for.html" class="uri">http://crazyhottommy.blogspot.com/2016/06/how-to-deal-with-paired-samples-for.html</a>.</p>
+</div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

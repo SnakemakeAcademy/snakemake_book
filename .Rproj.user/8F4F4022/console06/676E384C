@@ -202,4 +202,19 @@ fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
 03-method.Rmd      06-references.Rmd   [01;34m_bookdown_files[0m  _output.yml    README.md
 ]0;/home/xie186/snakemake_academy/snakemake_book $ 
 ]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
+[K$ snakemake -s  gener_tabix.sm.py --configfile config.yaml [C[Cls[Kpwdsnakemake -s  gener_tabix.sm.py --configfile config.yaml -n --p > cmd1_gener_tabix.np.sh[C[C[C[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn -p[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Pvi config.yaml^C
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ ls
+01-intro.Rmd        07_smk_pair.Rmd  _output.yml
+02-literature.Rmd   [0m[01;34m_book[0m            packages.bib
+03-method.Rmd       book.bib         preamble.tex
+04-application.Rmd  [01;34m_bookdown_files[0m  README.md
+05-summary.Rmd      _bookdown.yml    snakemake_book.Rproj
+06-references.Rmd   index.Rmd        style.css
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ pwd
+/home/xie186/snakemake_academy/snakemake_book
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ git add .
