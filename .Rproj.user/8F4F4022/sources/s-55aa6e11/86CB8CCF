@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1248109858",
+    "hash" : "4255110800",
     "id" : "86CB8CCF",
-    "lastKnownWriteTime" : 1544999622,
-    "last_content_update" : 1544999622,
+    "lastKnownWriteTime" : 1546203590,
+    "last_content_update" : 1546203590219,
     "path" : "~/snakemake_academy/snakemake_book/_output.yml",
     "project_path" : "_output.yml",
     "properties" : {
+        "cursorPosition" : "1,2",
+        "scrollLine" : "0"
     },
     "relative_order" : 3,
     "source_on_save" : false,

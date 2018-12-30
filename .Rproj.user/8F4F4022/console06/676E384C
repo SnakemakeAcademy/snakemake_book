@@ -218,3 +218,26 @@ fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
 /home/xie186/snakemake_academy/snakemake_book
 ]0;/home/xie186/snakemake_academy/snakemake_book$ 
 ]0;/home/xie186/snakemake_academy/snakemake_book$ git add .
+
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ git commit -m ""U"p"d"a"t"e"
+
+[master e762275] Update
+ 23 files changed, 633 insertions(+), 860 deletions(-)
+ rewrite .Rproj.user/8F4F4022/console06/INDEX001 (100%)
+ rewrite .Rproj.user/8F4F4022/sources/s-55aa6e11/9A3FED2C-contents (83%)
+ create mode 100644 .gitignore
+ rewrite 01-intro.Rmd (97%)
+ create mode 100644 07_smk_pair.Rmd
+ rewrite _book/intro.html (67%)
+ create mode 100644 _book/paired-samples-for-snakemake.html
+ rewrite _book/search_index.json (81%)
+ rewrite index.Rmd (83%)
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ 
+]0;/home/xie186/snakemake_academy/snakemake_book$ git push origin master
+
+error: cannot run rpostback-askpass: No such file or directory
+Username for 'https://github.com': error: cannot run rpostback-askpass: No such file or directory
+Password for 'https://github.com': 
+]0;/home/xie186/snakemake_academy/snakemake_book$ git push origin master[C[C[C[C[C[Ccommit -m "Update"[C[C[C[C[C[Cadd .[K

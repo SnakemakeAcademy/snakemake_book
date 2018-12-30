@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3187222037",
+    "hash" : "1522041417",
     "id" : "55D28A12",
-    "lastKnownWriteTime" : 1544999622,
-    "last_content_update" : 1544999622,
+    "lastKnownWriteTime" : 1546203585,
+    "last_content_update" : 1546203585204,
     "path" : "~/snakemake_academy/snakemake_book/_bookdown.yml",
     "project_path" : "_bookdown.yml",
     "properties" : {
+        "cursorPosition" : "1,18",
+        "scrollLine" : "0"
     },
     "relative_order" : 2,
     "source_on_save" : false,

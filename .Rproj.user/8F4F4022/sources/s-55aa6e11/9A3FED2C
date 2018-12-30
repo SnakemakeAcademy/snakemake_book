@@ -7,12 +7,12 @@
     "folds" : "",
     "hash" : "0",
     "id" : "9A3FED2C",
-    "lastKnownWriteTime" : 1546177148,
-    "last_content_update" : 1546177148859,
+    "lastKnownWriteTime" : 1546203435,
+    "last_content_update" : 1546203435839,
     "path" : "~/snakemake_academy/snakemake_book/index.Rmd",
     "project_path" : "index.Rmd",
     "properties" : {
-        "cursorPosition" : "22,0",
+        "cursorPosition" : "5,19",
         "scrollLine" : "0"
     },
     "relative_order" : 4,
