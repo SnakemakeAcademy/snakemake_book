@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="literature.html">
+<link rel="prev" href="read-httpsgroups-google-comforumsearchinsnakemakedependenciessnakemakeidnr3picsfex-qqvzwbbgaj.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -72,17 +72,8 @@
 <li class="chapter" data-level="2.1.1" data-path="intro.html"><a href="intro.html#recommended-way-to-install-snakemake"><i class="fa fa-check"></i><b>2.1.1</b> Recommended way to install <code>snakemake</code></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
-<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
-<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
-<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
-<li class="chapter" data-level="7" data-path="paired-samples-for-snakemake.html"><a href="paired-samples-for-snakemake.html"><i class="fa fa-check"></i><b>7</b> Paired samples for snakemake</a><ul>
-<li class="chapter" data-level="7.1" data-path="paired-samples-for-snakemake.html"><a href="paired-samples-for-snakemake.html#convert-dictionary-content-to-wildcards"><i class="fa fa-check"></i><b>7.1</b> Convert dictionary content to <code>wildcards</code></a></li>
-</ul></li>
+<li class="chapter" data-level="3" data-path="read-httpsgroups-google-comforumsearchinsnakemakedependenciessnakemakeidnr3picsfex-qqvzwbbgaj.html"><a href="read-httpsgroups-google-comforumsearchinsnakemakedependenciessnakemakeidnr3picsfex-qqvzwbbgaj.html"><i class="fa fa-check"></i><b>3</b> read <a href="https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/iDnr3PIcsfE/x-qQvzWBBgAJ" class="uri">https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/iDnr3PIcsfE/x-qQvzWBBgAJ</a></a></li>
+<li class="chapter" data-level="4" data-path="httpsgroups-google-comforumsearchinsnakemakedependenciessnakemake1qelazgzilyobgzop19bl4j.html"><a href="httpsgroups-google-comforumsearchinsnakemakedependenciessnakemake1qelazgzilyobgzop19bl4j.html"><i class="fa fa-check"></i><b>4</b> <a href="https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J" class="uri">https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J</a></a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -103,42 +94,31 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
-<div id="installation" class="section level2">
-<h2><span class="header-section-number">2.1</span> Installation</h2>
-<p>Snakemake</p>
-<div id="recommended-way-to-install-snakemake" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Recommended way to install <code>snakemake</code></h3>
-<pre><code>## Create a snakemake environment
-conda create -n smk_env</code></pre>
-<pre class="text"><code>## Package Plan ##
+<div id="httpsgroups.google.comforumsearchinsnakemakedependenciessnakemake1qelazgzilyobgzop19bl4j" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> <a href="https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J" class="uri">https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J</a></h1>
+<p>aDict = {“B”:“inputG1”, “A”:“inputG1”, “C”:“inputG2”}</p>
+<p>rule all: input: [“C.bed”, “A.bed”, “B.bed”]</p>
+<p>def get_files(wildcards): case = wildcards.case control = aDict[case] return [case + “.sorted.bam”, control + “.sorted.bam”]</p>
+<p>rule call_peak: input: get_files output: “{case}.bed” shell: “”&quot; echo macs14 -t {input[0]} -c {input[1]} -n {wildcards.case} touch {output} “”&quot;</p>
+<pre><code>
 
-  environment location: /home/xie186/miniconda2/envs/smk_env
+## Convert dictionary content to `wildcards`
 
+</code></pre>
+<p>SAMPLES=“BMAL1-ZT10_rep1 BMAL1-ZT10_rep2 BMAL1-ZT22_rep1”.split() COMPARES={ “10vs22” : (“BMAL1-ZT10_rep1 BMAL1-ZT10_rep2”.split(), [“BMAL1-ZT22_rep1”]), “r1vsr2” : ([“BMAL1-ZT10_rep1”], [“BMAL1-ZT10_rep2”])}</p>
+<p>rule All: input: expand(“diffexp/{compare}.diff”, compare=COMPARES.keys()) rule GfoldDiff: input: expand(“diffexp/{sample}.cnt”, sample=COMPARES[“{wildcards.compare}”]) output: “diffexp/{compare}.diff”</p>
+<pre><code>
+</code></pre>
+<p>def gfold_group1(wildcards): return [“diffexp/{0}.cnt”.format(i) for i in COMPARES[wildcards.compare][0]] def gfold_group2(wildcards): return [“diffexp/{0}.cnt”.format(i) for i in COMPARES[wildcards.compare][1]] rule GfoldDiff: input: group1=gfold_group1,group2=gfold_group2 output: “diffexp/{compare}.diff” run: shell(“gfold diff -s1 {group1} -s2 {group2} -o {output}”.format( group1=“,”.join(group1), group2=“,”.join(group2), output=output)) ```</p>
 
-Proceed ([y]/n)?
-Preparing transaction: done
-Verifying transaction: done
-Executing transaction: done
-#
-# To activate this environment, use:
-# &gt; source activate smk_env
-#
-# To deactivate an active environment, use:
-# &gt; source deactivate
-#</code></pre>
-
-</div>
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="read-httpsgroups-google-comforumsearchinsnakemakedependenciessnakemakeidnr3picsfex-qqvzwbbgaj.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

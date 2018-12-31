@@ -1,4 +1,69 @@
-# Introduction {#intro}
+# Introduction
+
 
 ## Installation
+
+Snakemake 
+
+### Recommended way to install `snakemake`
+
+```
+## Create a snakemake environment
+conda create -n smk_env
+```
+
+You will see the following if the envrironment can be successfully install: 
+
+```text
+## Package Plan ##
+
+  environment location: /home/xie186/miniconda2/envs/smk_env
+
+
+Proceed ([y]/n)?
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use:
+# > source activate smk_env
+#
+# To deactivate an active environment, use:
+# > source deactivate
+#
+```
+
+Now you run the command line below:
+
+```
+source activate smk_env
+
+## This may take a few minutes. 
+conda install -c bioconda -c conda-forge snakemake
+```
+
+
+
+
+## Install software using `conda`
+
+
+```
+# Trim galore will be installed
+# cutadapt will be also installed
+conda install -c bioconda trim-galore 
+
+# Bismark (bowtie2) will be installed
+conda install -c bioconda bismark 
+
+```
+
+## Backup a environment
+
+```
+conda list --export > requirements.txt
+
+# 'requirements.txt' may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+```
 

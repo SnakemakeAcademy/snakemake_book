@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="literature.html">
-<link rel="next" href="applications.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="literature.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -105,18 +105,65 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1">
-<h1><span class="header-section-number">Chapter 4</span> Methods</h1>
-<p>We describe our methods in this chapter.</p>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<div id="installation" class="section level2">
+<h2><span class="header-section-number">2.1</span> Installation</h2>
+<p>Snakemake</p>
+<div id="recommended-way-to-install-snakemake" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Recommended way to install <code>snakemake</code></h3>
+<pre><code>## Create a snakemake environment
+conda create -n smk_env</code></pre>
+<p>You will see the following if the envrironment can be successfully install:</p>
+<pre class="text"><code>## Package Plan ##
 
+  environment location: /home/xie186/miniconda2/envs/smk_env
+
+
+Proceed ([y]/n)?
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+#
+# To activate this environment, use:
+# &gt; source activate smk_env
+#
+# To deactivate an active environment, use:
+# &gt; source deactivate
+#</code></pre>
+<p>Now you run the command line below:</p>
+<pre><code>source activate smk_env
+
+## This may take a few minutes. 
+conda install -c bioconda -c conda-forge snakemake</code></pre>
+</div>
+</div>
+<div id="install-software-using-conda" class="section level2">
+<h2><span class="header-section-number">2.2</span> Install software using <code>conda</code></h2>
+<pre><code># Trim galore will be installed
+# cutadapt will be also installed
+conda install -c bioconda trim-galore 
+
+# Bismark (bowtie2) will be installed
+conda install -c bioconda bismark 
+</code></pre>
+</div>
+<div id="backup-a-environment" class="section level2">
+<h2><span class="header-section-number">2.3</span> Backup a environment</h2>
+<pre><code>conda list --export &gt; requirements.txt
+
+# &#39;requirements.txt&#39; may be used to create an environment using:
+# $ conda create --name &lt;env&gt; --file &lt;this file&gt;</code></pre>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="literature.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="literature.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
