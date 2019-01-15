@@ -1,0 +1,103 @@
+
+# Example
+
+##  Example Snakemake pipeline
+
+
+```
+# Example Snakemake pipeline
+#
+# This example snakefile performs the following steps:
+#
+# * Downloads an Excel file
+# * Converts the file to CSV format
+# * Plots a result
+# * Creates a summary report
+#
+# LICENSE: CC0. Do what you want with the code, but it has no guarantees.
+#          https://creativecommons.org/share-your-work/public-domain/cc0/
+#
+# Installation with conda package manager:
+#
+# conda config --add channels defaults
+# conda config --add channels conda-forge
+# conda config --add channels bioconda
+# conda create -n snakemake-env graphviz imagemagick pandas python r-base rpy2 snakemake xlrd
+# source activate snakemake-env
+#
+# **Warning:** There is no guarantee that this conda setup will enable inserting
+# R code directly into the Snakefile. rpy2 is a notoriously difficult package to
+# install properly because it requires Python and R to be installed with
+# specific configurations. It worked today (2017-11-09) using the channel order
+# bioconda, conda-forge, defaults. Suprisingly removing conda-forge broke it
+# (usually mixing these two channels causes problems). For a more robust
+# solution, write your R code in separate scripts and pass the arguments from
+# Snakemake to your script using Rscript and `commandArgs(trailingOnly = TRUE)`.
+# 
+# Installation on Debian/Ubuntu:
+#
+# Python
+# sudo apt-get install python3 python3-pandas python3-xlrd
+# R
+# sudo apt-get install r-base
+# Snakemake
+# sudo apt-get install snakemake
+# rpy2 so that Snakemake can communicate between Python and R
+# sudo apt-get install python3-rpy2
+# To visualize the DAG (directed acyclic graph)
+# sudo apt-get install graphviz imagemagick
+#
+# Executing the Snakefile:
+#
+# Run in "dry run" mode to preview the steps to be run:
+# snakemake -s snake-group-meeting.py -n
+#
+# Visualize the dependency graph:
+# snakemake -s snake-group-meeting.py --dag | dot | display
+#
+# Run the pipeline:
+# snakemake -s snake-group-meeting.py
+
+from snakemake.utils import R
+from snakemake.utils import report
+
+samples = ["DEG_list"]
+
+rule all:
+    input: expand("{sample}.report.html", sample = samples)
+
+rule download_data:
+    output: "{sample}.xlsx"
+    shell: "wget https://github.com/gaow/random-nbs/raw/master/data/{output}"
+
+rule xlsx_to_csv:
+    input: xlsx = "{sample}.xlsx"
+    output: csv = "{sample}.csv"
+    run:
+        import pandas as pd
+        data = pd.read_excel(input.xlsx)
+        data.to_csv(output.csv)
+
+rule plot:
+    input: "{sample}.csv"
+    output: "{sample}.png"
+    run:
+        R("""
+        dat = read.csv("{input}")
+        png("{output}")
+        plot(dat$log2FoldChange, dat$stat)
+        dev.off()
+        """)
+
+rule report:
+    input: "{sample}.png"
+    output: html = "{sample}.report.html"
+    run:
+        report("""
+        Today,
+        * We had a good lunch
+        * We made this figure: ``{input}``
+        .. image:: {input}
+        """, output.html, **input)
+
+```

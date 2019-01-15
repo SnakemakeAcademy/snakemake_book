@@ -67,3 +67,24 @@ conda list --export > requirements.txt
 # $ conda create --name <env> --file <this file>
 ```
 
+
+## Workflow of WGBS data analysis
+
+
+1. Qualty control
+
+2. Read alignment and methylation extraction
+
+3. DMR identification
+
+
+
+
+
+
+
+
+
+
+
+

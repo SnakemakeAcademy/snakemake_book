@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="references.html">
-<link rel="next" href="example.html">
+<link rel="prev" href="paired-samples-for-snakemake.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -109,55 +109,111 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="paired-samples-for-snakemake" class="section level1">
-<h1><span class="header-section-number">Chapter 7</span> Paired samples for snakemake</h1>
-<p>sfsd <span class="citation">Tang (n.d.)</span></p>
-<pre><code># read https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/iDnr3PIcsfE/x-qQvzWBBgAJ
-# https://groups.google.com/forum/#!searchin/snakemake/dependencies/snakemake/1QelazgzilY/oBgZoP19BL4J
+<div id="example" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Example</h1>
+<div id="example-snakemake-pipeline" class="section level2">
+<h2><span class="header-section-number">8.1</span> Example Snakemake pipeline</h2>
+<pre><code># Example Snakemake pipeline
+#
+# This example snakefile performs the following steps:
+#
+# * Downloads an Excel file
+# * Converts the file to CSV format
+# * Plots a result
+# * Creates a summary report
+#
+# LICENSE: CC0. Do what you want with the code, but it has no guarantees.
+#          https://creativecommons.org/share-your-work/public-domain/cc0/
+#
+# Installation with conda package manager:
+#
+# conda config --add channels defaults
+# conda config --add channels conda-forge
+# conda config --add channels bioconda
+# conda create -n snakemake-env graphviz imagemagick pandas python r-base rpy2 snakemake xlrd
+# source activate snakemake-env
+#
+# **Warning:** There is no guarantee that this conda setup will enable inserting
+# R code directly into the Snakefile. rpy2 is a notoriously difficult package to
+# install properly because it requires Python and R to be installed with
+# specific configurations. It worked today (2017-11-09) using the channel order
+# bioconda, conda-forge, defaults. Suprisingly removing conda-forge broke it
+# (usually mixing these two channels causes problems). For a more robust
+# solution, write your R code in separate scripts and pass the arguments from
+# Snakemake to your script using Rscript and `commandArgs(trailingOnly = TRUE)`.
+# 
+# Installation on Debian/Ubuntu:
+#
+# Python
+# sudo apt-get install python3 python3-pandas python3-xlrd
+# R
+# sudo apt-get install r-base
+# Snakemake
+# sudo apt-get install snakemake
+# rpy2 so that Snakemake can communicate between Python and R
+# sudo apt-get install python3-rpy2
+# To visualize the DAG (directed acyclic graph)
+# sudo apt-get install graphviz imagemagick
+#
+# Executing the Snakefile:
+#
+# Run in &quot;dry run&quot; mode to preview the steps to be run:
+# snakemake -s snake-group-meeting.py -n
+#
+# Visualize the dependency graph:
+# snakemake -s snake-group-meeting.py --dag | dot | display
+#
+# Run the pipeline:
+# snakemake -s snake-group-meeting.py
 
-aDict = {&quot;B&quot;:&quot;inputG1&quot;, &quot;A&quot;:&quot;inputG1&quot;, &quot;C&quot;:&quot;inputG2&quot;}
+from snakemake.utils import R
+from snakemake.utils import report
+
+samples = [&quot;DEG_list&quot;]
 
 rule all:
-    input: [&quot;C.bed&quot;, &quot;A.bed&quot;, &quot;B.bed&quot;]
+    input: expand(&quot;{sample}.report.html&quot;, sample = samples)
 
-def get_files(wildcards):
-    case = wildcards.case
-    control = aDict[case]
-    return [case + &quot;.sorted.bam&quot;, control + &quot;.sorted.bam&quot;]
+rule download_data:
+    output: &quot;{sample}.xlsx&quot;
+    shell: &quot;wget https://github.com/gaow/random-nbs/raw/master/data/{output}&quot;
 
-rule call_peak:
-    input: get_files
-    output: &quot;{case}.bed&quot;
-    shell:
-        &quot;&quot;&quot;
-        echo macs14 -t {input[0]} -c {input[1]} -n {wildcards.case}
-        touch {output}
-        &quot;&quot;&quot;</code></pre>
-<div id="convert-dictionary-content-to-wildcards" class="section level2">
-<h2><span class="header-section-number">7.1</span> Convert dictionary content to <code>wildcards</code></h2>
-<pre><code>SAMPLES=&quot;BMAL1-ZT10_rep1 BMAL1-ZT10_rep2 BMAL1-ZT22_rep1&quot;.split()
-COMPARES={
-        &quot;10vs22&quot; : (&quot;BMAL1-ZT10_rep1 BMAL1-ZT10_rep2&quot;.split(), 
-                           [&quot;BMAL1-ZT22_rep1&quot;]),
-        &quot;r1vsr2&quot; : ([&quot;BMAL1-ZT10_rep1&quot;], 
-                         [&quot;BMAL1-ZT10_rep2&quot;])}
+rule xlsx_to_csv:
+    input: xlsx = &quot;{sample}.xlsx&quot;
+    output: csv = &quot;{sample}.csv&quot;
+    run:
+        import pandas as pd
+        data = pd.read_excel(input.xlsx)
+        data.to_csv(output.csv)
 
-rule All:
-     input:  expand(&quot;diffexp/{compare}.diff&quot;, compare=COMPARES.keys())
-rule GfoldDiff:
-     input: expand(&quot;diffexp/{sample}.cnt&quot;, sample=COMPARES[&quot;{wildcards.compare}&quot;])
-     output: &quot;diffexp/{compare}.diff&quot;</code></pre>
-<pre><code>def gfold_group1(wildcards):
-    return [&quot;diffexp/{0}.cnt&quot;.format(i) for i in COMPARES[wildcards.compare][0]]
-def gfold_group2(wildcards):
-    return [&quot;diffexp/{0}.cnt&quot;.format(i) for i in COMPARES[wildcards.compare][1]]
-rule GfoldDiff:
-     input: group1=gfold_group1,group2=gfold_group2
-     output: &quot;diffexp/{compare}.diff&quot;
-     run:
-          shell(&quot;gfold diff -s1 {group1} -s2 {group2} -o {output}&quot;.format(
-          group1=&quot;,&quot;.join(group1), group2=&quot;,&quot;.join(group2), output=output))</code></pre>
+rule plot:
+    input: &quot;{sample}.csv&quot;
+    output: &quot;{sample}.png&quot;
+    run:
+        R(&quot;&quot;&quot;
+        dat = read.csv(&quot;{input}&quot;)
+        png(&quot;{output}&quot;)
+        plot(dat$log2FoldChange, dat$stat)
+        dev.off()
+        &quot;&quot;&quot;)
 
+rule report:
+    input: &quot;{sample}.png&quot;
+    output: html = &quot;{sample}.report.html&quot;
+    run:
+        report(&quot;&quot;&quot;
+        Today,
+        * We had a good lunch
+        * We made this figure: ``{input}``
+        .. image:: {input}
+        &quot;&quot;&quot;, output.html, **input)
+</code></pre>
+
+<div id="refs" class="references">
+<div>
+<p>Tang, Tommy. n.d. “Deal with Paired Samples for Snakemake.” Diving into Genetics; Genomics (blog). <a href="http://crazyhottommy.blogspot.com/2016/06/how-to-deal-with-paired-samples-for.html" class="uri">http://crazyhottommy.blogspot.com/2016/06/how-to-deal-with-paired-samples-for.html</a>.</p>
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -165,8 +221,8 @@ rule GfoldDiff:
           </div>
         </div>
       </div>
-<a href="references.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="example.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="paired-samples-for-snakemake.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

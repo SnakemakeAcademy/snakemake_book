@@ -25,7 +25,7 @@
 <meta name="author" content="Shaojun Xie">
 
 
-<meta name="date" content="2018-12-31">
+<meta name="date" content="2019-01-15">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -73,6 +73,7 @@
 </ul></li>
 <li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#install-software-using-conda"><i class="fa fa-check"></i><b>2.2</b> Install software using <code>conda</code></a></li>
 <li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#backup-a-environment"><i class="fa fa-check"></i><b>2.3</b> Backup a environment</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#workflow-of-wgbs-data-analysis"><i class="fa fa-check"></i><b>2.4</b> Workflow of WGBS data analysis</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -84,6 +85,9 @@
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="chapter" data-level="7" data-path="paired-samples-for-snakemake.html"><a href="paired-samples-for-snakemake.html"><i class="fa fa-check"></i><b>7</b> Paired samples for snakemake</a><ul>
 <li class="chapter" data-level="7.1" data-path="paired-samples-for-snakemake.html"><a href="paired-samples-for-snakemake.html#convert-dictionary-content-to-wildcards"><i class="fa fa-check"></i><b>7.1</b> Convert dictionary content to <code>wildcards</code></a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>8</b> Example</a><ul>
+<li class="chapter" data-level="8.1" data-path="example.html"><a href="example.html#example-snakemake-pipeline"><i class="fa fa-check"></i><b>8.1</b> Example Snakemake pipeline</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -154,6 +158,14 @@ conda install -c bioconda bismark
 
 # &#39;requirements.txt&#39; may be used to create an environment using:
 # $ conda create --name &lt;env&gt; --file &lt;this file&gt;</code></pre>
+</div>
+<div id="workflow-of-wgbs-data-analysis" class="section level2">
+<h2><span class="header-section-number">2.4</span> Workflow of WGBS data analysis</h2>
+<ol style="list-style-type: decimal">
+<li><p>Qualty control</p></li>
+<li><p>Read alignment and methylation extraction</p></li>
+<li><p>DMR identification</p></li>
+</ol>
 
 </div>
 </div>

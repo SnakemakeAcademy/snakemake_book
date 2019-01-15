@@ -1,286 +1,0 @@
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ echo "# snakemake_book" >> README.md
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ pwd
-/home/xie186/snakemake_academy/snakemake_book
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ ls
-01-intro.Rmd       04-application.Rmd  [0m[01;34m_book[0m            _bookdown.yml  packages.bib  snakemake_book.Rproj
-02-literature.Rmd  05-summary.Rmd      book.bib         index.Rmd      preamble.tex  style.css
-03-method.Rmd      06-references.Rmd   [01;34m_bookdown_files[0m  _output.yml    README.md
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git init
-Initialized empty Git repository in /home/xie186/snakemake_academy/snakemake_book/.git/
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config --lst[K[Kist
-core.repositoryformatversion=0
-core.filemode=true
-core.bare=false
-core.logallrefupdates=true
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git add README.md
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config --list
-core.repositoryformatversion=0
-core.filemode=true
-core.bare=false
-core.logallrefupdates=true
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git a[Kconfig --local user.exmail x[K""x"i"e"1"8"6"@"p"u"r"d"u"e"."e"d"u"
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config --local user.exmail "xie186@purdue.edu"[C[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P "xie186"[1P "xie186"[1P "xie186"[1P "xie186"[1P "xie186"[1P "xie186"n "xie186"a "xie186"m "xie186"e "xie186"
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git [K[K[K[Kgit commit -m "first commit"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ git remote add origin https://github.com/SnakemakeAcademy/snakemake_book.git
-]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master
-error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
-]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[C[Cnfig --local user.name "xie186"
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config --local user.name "xie186"[C[C[C[C[C[C[C[12Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[C[Cnfig --local user.name "xie186"exmail "xie186@purdue.edu"
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ fi c[K[K[K[Kgit config ==;[K[K--[K[K[K--list
-core.repositoryformatversion=0
-core.filemode=true
-core.bare=false
-core.logallrefupdates=true
-user.exmail=xie186@purdue.edu
-user.name=xie186
-remote.origin.url=https://github.com/SnakemakeAcademy/snakemake_book.git
-remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ gt[Kit commit m[Km[K-m ""U"p"d"a"t"e"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[13Pname "xie186"[1P[1P[1P[1P[1P[1P[1P
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.name "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[13Pname "xie186"[C[C[C[C[C[C[C[12Ppush -u origin master[C[C[C[C[C[C[Cconfig --local user.name "xie186"exmail "xie186@purdue.edu"[1P[1P[1P[1P[1P[1P[1P
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pname "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cist[K
-core.repositoryformatversion=0
-core.filemode=true
-core.bare=false
-core.logallrefupdates=true
-user.exmail=xie186@purdue.edu
-user.name=xie186
-remote.origin.url=https://github.com/SnakemakeAcademy/snakemake_book.git
-remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config --list user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pname "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[Cnfig  user.name "xie186"[C[C[C[C[C[C[C[C[C[8Pmmit -m "Update"[C[C[C[C[C[C[C[C[C[5Pnfig --listocal user.exmail "xie186@purdue.edu"[13Pname "xie186"[C[C[C[C[C[C[C[12Ppush -u origin master
-error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
-]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m "first commit"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ git remote add origin https://github.com/SnakemakeAcademy/snakemake_book.git
-fatal: remote origin already exists.
-]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master
-error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git push -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[C[8Pconfig --list user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[15Pmmit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[C[48Pcommit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[C[8Pconfig --list user.exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pname "xie186"
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git config  user.name "xie186"exmail "xie186@purdue.edu"[C[C[C[C[C[C[C[C[C[15Pmmit -m "first commit"[C[C[C[C[C[C[C[3Ppush -u origin master[C[C[C[C[C[C[Cremote add origin https://github.com/SnakemakeAcademy/snakemake_book.git[C[C[C[C[C[C[Cpush -u origin master[K[C[C[C[C[C[C[Ccommit -m "first commit"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git commit -m ""U"p"d"a"t"e"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ vi .git/
-branches/    config       description  HEAD         hooks/       index        info/        objects/     refs/        
- $ vi .git/config 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ git ad[K[Kpsuh or[K[K[K[K[K[Kush origin master
-error: src refspec master does not match any.
-error: failed to push some refs to 'https://github.com/SnakemakeAcademy/snakemake_book.git'
-]0;/home/xie186/snakemake_academy/snakemake_book $ git push origin master[C[C[C[7Pvi .git/config [C[C[Cgit commit -m "Update"first commit"[6PUpdate"first commit"
-
-*** Please tell me who you are.
-
-Run
-
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-to set your account's default identity.
-Omit --global to set the identity only in this repository.
-
-fatal: unable to auto-detect email address (got 'xie186@tabomics.(none)')
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ ls
-01-intro.Rmd       04-application.Rmd  [0m[01;34m_book[0m            _bookdown.yml  packages.bib  snakemake_book.Rproj
-02-literature.Rmd  05-summary.Rmd      book.bib         index.Rmd      preamble.tex  style.css
-03-method.Rmd      06-references.Rmd   [01;34m_bookdown_files[0m  _output.yml    README.md
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-]0;/home/xie186/snakemake_academy/snakemake_book $ 
-[K$ snakemake -s  gener_tabix.sm.py --configfile config.yaml [C[Cls[Kpwdsnakemake -s  gener_tabix.sm.py --configfile config.yaml -n --p > cmd1_gener_tabix.np.sh[C[C[C[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn -p[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[23Pvi config.yaml^C
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ ls
-01-intro.Rmd        07_smk_pair.Rmd  _output.yml
-02-literature.Rmd   [0m[01;34m_book[0m            packages.bib
-03-method.Rmd       book.bib         preamble.tex
-04-application.Rmd  [01;34m_bookdown_files[0m  README.md
-05-summary.Rmd      _bookdown.yml    snakemake_book.Rproj
-06-references.Rmd   index.Rmd        style.css
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ pwd
-/home/xie186/snakemake_academy/snakemake_book
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ git add .
-
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ git commit -m ""U"p"d"a"t"e"
-
-[master e762275] Update
- 23 files changed, 633 insertions(+), 860 deletions(-)
- rewrite .Rproj.user/8F4F4022/console06/INDEX001 (100%)
- rewrite .Rproj.user/8F4F4022/sources/s-55aa6e11/9A3FED2C-contents (83%)
- create mode 100644 .gitignore
- rewrite 01-intro.Rmd (97%)
- create mode 100644 07_smk_pair.Rmd
- rewrite _book/intro.html (67%)
- create mode 100644 _book/paired-samples-for-snakemake.html
- rewrite _book/search_index.json (81%)
- rewrite index.Rmd (83%)
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ 
-]0;/home/xie186/snakemake_academy/snakemake_book$ git push origin master
-
-error: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': error: cannot run rpostback-askpass: No such file or directory
-Password for 'https://github.com': 
-]0;/home/xie186/snakemake_academy/snakemake_book$ git push origin master[C[C[C[C[C[Ccommit -m "Update"[C[C[C[C[C[Cadd .[K
-]0;/home/xie186/snakemake_academy/snakemake_book$ git add .push origin master
-^C
-]0;/home/xie186/snakemake_academy/snakemake_book$ git push origin master[C[C[C[C[C[Cadd .[Kpush origin master[C[C[C[C[C[Ccommit -m "Update"
-[master e0c3ce9] Update
- 46 files changed, 3059 insertions(+), 14 deletions(-)
- create mode 100644 docs/applications.html
- create mode 100644 docs/final-words.html
- create mode 100644 docs/index.html
- create mode 100644 docs/intro.html
- create mode 100644 docs/libs/gitbook-2.6.7/css/fontawesome/fontawesome-webfont.ttf
- create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-bookdown.css
- create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-fontsettings.css
- create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-highlight.css
- create mode 100644 docs/libs/gitbook-2.6.7/css/plugin-search.css
- create mode 100644 docs/libs/gitbook-2.6.7/css/style.css
- create mode 100644 docs/libs/gitbook-2.6.7/js/app.min.js
- create mode 100644 docs/libs/gitbook-2.6.7/js/jquery.highlight.js
- create mode 100644 docs/libs/gitbook-2.6.7/js/lunr.js
- create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-bookdown.js
- create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-fontsettings.js
- create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-search.js
- create mode 100644 docs/libs/gitbook-2.6.7/js/plugin-sharing.js
- create mode 100644 docs/libs/jquery-2.2.3/jquery.min.js
- create mode 100644 docs/literature.html
- create mode 100644 docs/methods.html
- create mode 100644 docs/paired-samples-for-snakemake.html
- create mode 100644 docs/references.html
- create mode 100644 docs/search_index.json
- create mode 100644 docs/style.css
-]0;/home/xie186/snakemake_academy/snakemake_book$ git commit -m "Update"[C[C[C[C[C[Cpush origin master[C[C[C[C[C[Cadd .[Kpush origin master[C[C[C[C[C[Ccommit -m "Update"[C[C[C[C[C[Cpush origin master[C[C[C[C[C[Ccommit -m "Update"[C[C[C[C[C[Cadd .[K[C[C[6Ppwd[1Plspwdgit add .commit -m "Update"[C[C[C[C[C[Cpush origin master
-error: cannot run rpostback-askpass: No such file or directory
-Username for 'https://github.com': xie186
-error: cannot run rpostback-askpass: No such file or directory
-Password for 'https://xie186@github.com': 
-Counting objects: 62, done.
-Delta compression using up to 4 threads.
-Compressing objects:   1% (1/58)   Compressing objects:   3% (2/58)   Compressing objects:   5% (3/58)   Compressing objects:   6% (4/58)   Compressing objects:   8% (5/58)   Compressing objects:  10% (6/58)   Compressing objects:  12% (7/58)   Compressing objects:  13% (8/58)   Compressing objects:  15% (9/58)   Compressing objects:  17% (10/58)   Compressing objects:  18% (11/58)   Compressing objects:  20% (12/58)   Compressing objects:  22% (13/58)   Compressing objects:  24% (14/58)   Compressing objects:  25% (15/58)   Compressing objects:  27% (16/58)   Compressing objects:  29% (17/58)   Compressing objects:  31% (18/58)   Compressing objects:  32% (19/58)   Compressing objects:  34% (20/58)   Compressing objects:  36% (21/58)   Compressing objects:  37% (22/58)   Compressing objects:  39% (23/58)   Compressing objects:  41% (24/58)   Compressing objects:  43% (25/58)   Compressing objects:  44% (26/58)   Compressing objects:  46% (27/58)   Compressing objects:  48% (28/58)   Compressing objects:  50% (29/58)   Compressing objects:  51% (30/58)   Compressing objects:  53% (31/58)   Compressing objects:  55% (32/58)   Compressing objects:  56% (33/58)   Compressing objects:  58% (34/58)   Compressing objects:  60% (35/58)   Compressing objects:  62% (36/58)   Compressing objects:  63% (37/58)   Compressing objects:  65% (38/58)   Compressing objects:  67% (39/58)   Compressing objects:  68% (40/58)   Compressing objects:  70% (41/58)   Compressing objects:  72% (42/58)   Compressing objects:  74% (43/58)   Compressing objects:  75% (44/58)   Compressing objects:  77% (45/58)   Compressing objects:  79% (46/58)   Compressing objects:  81% (47/58)   Compressing objects:  82% (48/58)   Compressing objects:  84% (49/58)   Compressing objects:  86% (50/58)   Compressing objects:  87% (51/58)   Compressing objects:  89% (52/58)   Compressing objects:  91% (53/58)   Compressing objects:  93% (54/58)   Compressing objects:  94% (55/58)   Compressing objects:  96% (56/58)   Compressing objects:  98% (57/58)   Compressing objects: 100% (58/58)   Compressing objects: 100% (58/58), done.
-Writing objects:   1% (1/62)   Writing objects:   3% (2/62)   Writing objects:   4% (3/62)   Writing objects:   6% (4/62)   Writing objects:   8% (5/62)   Writing objects:   9% (6/62)   Writing objects:  11% (7/62)   Writing objects:  12% (8/62)   Writing objects:  14% (9/62)   Writing objects:  16% (10/62)   Writing objects:  17% (11/62)   Writing objects:  19% (12/62)   Writing objects:  20% (13/62)   Writing objects:  22% (14/62)   Writing objects:  24% (15/62)   Writing objects:  25% (16/62)   Writing objects:  27% (17/62)   Writing objects:  29% (18/62)   Writing objects:  30% (19/62)   Writing objects:  32% (20/62)   Writing objects:  33% (21/62)   Writing objects:  35% (22/62)   Writing objects:  37% (23/62)   Writing objects:  38% (24/62)   Writing objects:  40% (25/62)   Writing objects:  41% (26/62)   Writing objects:  43% (27/62)   Writing objects:  45% (28/62)   Writing objects:  51% (32/62)   Writing objects:  54% (34/62)   Writing objects:  58% (36/62)   Writing objects:  59% (37/62)   Writing objects:  61% (38/62)   Writing objects:  62% (39/62)   Writing objects:  64% (40/62)   Writing objects:  66% (41/62)   Writing objects:  67% (42/62)   Writing objects:  69% (43/62)   Writing objects:  70% (44/62)   Writing objects:  72% (45/62)   Writing objects:  74% (46/62)   Writing objects:  75% (47/62)   Writing objects:  77% (48/62)   Writing objects:  79% (49/62)   Writing objects:  80% (50/62)   Writing objects:  82% (51/62)   Writing objects:  83% (52/62)   Writing objects:  85% (53/62)   Writing objects:  87% (54/62)   Writing objects:  88% (55/62)   Writing objects:  90% (56/62)   Writing objects:  91% (57/62)   Writing objects:  93% (58/62)   Writing objects:  95% (59/62)   Writing objects:  96% (60/62)   Writing objects:  98% (61/62)   Writing objects: 100% (62/62)   Writing objects: 100% (62/62), 11.18 KiB | 0 bytes/s, done.
-Total 62 (delta 34), reused 0 (delta 0)
-remote: Resolving deltas:   0% (0/34)   [Kremote: Resolving deltas:   2% (1/34)   [Kremote: Resolving deltas:   5% (2/34)   [Kremote: Resolving deltas:   8% (3/34)   [Kremote: Resolving deltas:  14% (5/34)   [Kremote: Resolving deltas:  20% (7/34)   [Kremote: Resolving deltas:  23% (8/34)   [Kremote: Resolving deltas:  26% (9/34)   [Kremote: Resolving deltas:  29% (10/34)   [Kremote: Resolving deltas:  32% (11/34)   [Kremote: Resolving deltas:  35% (12/34)   [Kremote: Resolving deltas:  41% (14/34)   [Kremote: Resolving deltas:  44% (15/34)   [Kremote: Resolving deltas:  47% (16/34)   [Kremote: Resolving deltas:  73% (25/34)   [Kremote: Resolving deltas:  97% (33/34)   [Kremote: Resolving deltas: 100% (34/34)   [Kremote: Resolving deltas: 100% (34/34), completed with 13 local objects.[K
-To https://github.com/SnakemakeAcademy/snakemake_book.git
-   fc9f378..e0c3ce9  master -> master
-]0;/home/xie186/snakemake_academy/snakemake_book$ exit[C[Cvi scripts/gener_tab4DMR.py [C[C[16@zcat s1_bis_rep/HYB48.bis_rep.tab.bgz |head[C[C[C[7Pless s1_bis_rep/HYB48.bis_rep.tab.bgz[C[Czcat s1_bis_rep/HYB48.bis_rep.tab.bgz |head [C[C[16Pvi scripts/gener_tab4DMR.py[C[C[Cexit[K[C[C[Kgit add .
