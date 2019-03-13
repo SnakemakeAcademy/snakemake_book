@@ -1,6 +1,6 @@
 --- 
 title: "Reproducible and scalable workflows with Snakemake"
-author: "Shaojun Xie"
+author: ""
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book

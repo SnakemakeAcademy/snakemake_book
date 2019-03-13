@@ -1,6 +1,40 @@
 # Introduction
 
 
+## Ratinale 
+
+###  what is reproducibility?
+
+No one agrees: That's actually replication / repetition / ...
+
+__Reproduce__: can someone else take the data / software and get the same
+answer?
+__Replicate__: can anyone get the same answer from a different study
+
+
+### what is reproducibility, really?
+
+
+The Rs of "small r" reproducibility:
+
+* Reproduce
+* Replicate
+* Reliable & robust
+* Repeat & rerun
+* Report
+* Reuse
+* Resource efficient ...
+
+### Why Snakemake?
+
+* It's lightweight
+* Flexible
+* "It's just Python"
+* You don't have to distort your analysis process
+* Substantial community
+* It's not make
+* It's actually useful (beyond reproducibility)
+
 ## Installation
 
 Snakemake 
@@ -9,7 +43,7 @@ Snakemake
 
 ```
 ## Create a snakemake environment
-conda create -n smk_env
+conda create -n smk_env 
 ```
 
 You will see the following if the envrironment can be successfully install: 
@@ -61,28 +95,64 @@ conda install -c bioconda bismark
 ## Backup a environment
 
 ```
-conda list --export > requirements.txt
+conda env export -n <env> >  environment.yaml
 
-# 'requirements.txt' may be used to create an environment using:
+# 'environment.yaml' may be used to create an environment using:
 # $ conda create --name <env> --file <this file>
 ```
 
 
-## Workflow of WGBS data analysis
-
-
-1. Qualty control
-
-2. Read alignment and methylation extraction
-
-3. DMR identification
 
 
 
 
+## What's it look like?
+
+• It's just a Python (3) script
+• A set of rules (input / output / shell or run)
+• Snakemake computes dependencies
+• Built-in text substitution!
 
 
+```
+rule wordcount_isles:
+    input: "moby-dick.txt"
+    output: "moby-wordcount.txt"
+    shell: "wc -w {input} > {output}"
+```
 
+
+## How do we use it?
+
+```
+snakemake 
+```
+
+* Look for a file called Snakemake
+* Runs the first rule in it
+* Both these things can be changed
+
+
+```
+snakemake -s <snakemake.file>
+```
+
+
+## What does the worflow look like?
+
+
+```
+rule print_results:
+    input: "moby-wordcount.txt"
+    run:
+        with open (input, 'w') as in_hndl:
+            for line in in_hndl:
+                print (line)
+rule wordcount_isles:
+    input: "moby-dick.txt"
+    output: "moby-wordcount.txt"
+    shell: "wc -w {input} > {output}"
+```
 
 
 

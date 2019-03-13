@@ -22,10 +22,9 @@
   
   
 
-<meta name="author" content="Shaojun Xie">
 
 
-<meta name="date" content="2019-01-15">
+<meta name="date" content="2019-03-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -68,12 +67,19 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
 <li class="chapter" data-level="2" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#installation"><i class="fa fa-check"></i><b>2.1</b> Installation</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#recommended-way-to-install-snakemake"><i class="fa fa-check"></i><b>2.1.1</b> Recommended way to install <code>snakemake</code></a></li>
+<li class="chapter" data-level="2.1" data-path="introduction.html"><a href="introduction.html#ratinale"><i class="fa fa-check"></i><b>2.1</b> Ratinale</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="introduction.html"><a href="introduction.html#what-is-reproducibility"><i class="fa fa-check"></i><b>2.1.1</b> what is reproducibility?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="introduction.html"><a href="introduction.html#what-is-reproducibility-really"><i class="fa fa-check"></i><b>2.1.2</b> what is reproducibility, really?</a></li>
+<li class="chapter" data-level="2.1.3" data-path="introduction.html"><a href="introduction.html#why-snakemake"><i class="fa fa-check"></i><b>2.1.3</b> Why Snakemake?</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#install-software-using-conda"><i class="fa fa-check"></i><b>2.2</b> Install software using <code>conda</code></a></li>
-<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#backup-a-environment"><i class="fa fa-check"></i><b>2.3</b> Backup a environment</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#workflow-of-wgbs-data-analysis"><i class="fa fa-check"></i><b>2.4</b> Workflow of WGBS data analysis</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction.html"><a href="introduction.html#installation"><i class="fa fa-check"></i><b>2.2</b> Installation</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="introduction.html"><a href="introduction.html#recommended-way-to-install-snakemake"><i class="fa fa-check"></i><b>2.2.1</b> Recommended way to install <code>snakemake</code></a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="introduction.html"><a href="introduction.html#install-software-using-conda"><i class="fa fa-check"></i><b>2.3</b> Install software using <code>conda</code></a></li>
+<li class="chapter" data-level="2.4" data-path="introduction.html"><a href="introduction.html#backup-a-environment"><i class="fa fa-check"></i><b>2.4</b> Backup a environment</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction.html"><a href="introduction.html#whats-it-look-like"><i class="fa fa-check"></i><b>2.5</b> What’s it look like?</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction.html"><a href="introduction.html#how-do-we-use-it"><i class="fa fa-check"></i><b>2.6</b> How do we use it?</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction.html"><a href="introduction.html#what-does-the-worflow-look-like"><i class="fa fa-check"></i><b>2.7</b> What does the worflow look like?</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
 <li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
@@ -88,7 +94,10 @@
 </ul></li>
 <li class="chapter" data-level="8" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>8</b> Example</a><ul>
 <li class="chapter" data-level="8.1" data-path="example.html"><a href="example.html#example-snakemake-pipeline"><i class="fa fa-check"></i><b>8.1</b> Example Snakemake pipeline</a></li>
+<li class="chapter" data-level="8.2" data-path="example.html"><a href="example.html#section"><i class="fa fa-check"></i><b>8.2</b> </a></li>
+<li class="chapter" data-level="8.3" data-path="example.html"><a href="example.html#pe-and-se-reads"><i class="fa fa-check"></i><b>8.3</b> PE and SE reads</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="workflow-of-wgbs-data-analysis.html"><a href="workflow-of-wgbs-data-analysis.html"><i class="fa fa-check"></i><b>9</b> Workflow of WGBS data analysis</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -111,13 +120,46 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
+<div id="ratinale" class="section level2">
+<h2><span class="header-section-number">2.1</span> Ratinale</h2>
+<div id="what-is-reproducibility" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> what is reproducibility?</h3>
+<p>No one agrees: That’s actually replication / repetition / …</p>
+<p><strong>Reproduce</strong>: can someone else take the data / software and get the same answer? <strong>Replicate</strong>: can anyone get the same answer from a different study</p>
+</div>
+<div id="what-is-reproducibility-really" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> what is reproducibility, really?</h3>
+<p>The Rs of “small r” reproducibility:</p>
+<ul>
+<li>Reproduce</li>
+<li>Replicate</li>
+<li>Reliable &amp; robust</li>
+<li>Repeat &amp; rerun</li>
+<li>Report</li>
+<li>Reuse</li>
+<li>Resource efficient …</li>
+</ul>
+</div>
+<div id="why-snakemake" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Why Snakemake?</h3>
+<ul>
+<li>It’s lightweight</li>
+<li>Flexible</li>
+<li>“It’s just Python”</li>
+<li>You don’t have to distort your analysis process</li>
+<li>Substantial community</li>
+<li>It’s not make</li>
+<li>It’s actually useful (beyond reproducibility)</li>
+</ul>
+</div>
+</div>
 <div id="installation" class="section level2">
-<h2><span class="header-section-number">2.1</span> Installation</h2>
+<h2><span class="header-section-number">2.2</span> Installation</h2>
 <p>Snakemake</p>
 <div id="recommended-way-to-install-snakemake" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Recommended way to install <code>snakemake</code></h3>
+<h3><span class="header-section-number">2.2.1</span> Recommended way to install <code>snakemake</code></h3>
 <pre><code>## Create a snakemake environment
-conda create -n smk_env</code></pre>
+conda create -n smk_env </code></pre>
 <p>You will see the following if the envrironment can be successfully install:</p>
 <pre class="text"><code>## Package Plan ##
 
@@ -143,7 +185,7 @@ conda install -c bioconda -c conda-forge snakemake</code></pre>
 </div>
 </div>
 <div id="install-software-using-conda" class="section level2">
-<h2><span class="header-section-number">2.2</span> Install software using <code>conda</code></h2>
+<h2><span class="header-section-number">2.3</span> Install software using <code>conda</code></h2>
 <pre><code># Trim galore will be installed
 # cutadapt will be also installed
 conda install -c bioconda trim-galore 
@@ -153,19 +195,42 @@ conda install -c bioconda bismark
 </code></pre>
 </div>
 <div id="backup-a-environment" class="section level2">
-<h2><span class="header-section-number">2.3</span> Backup a environment</h2>
-<pre><code>conda list --export &gt; requirements.txt
+<h2><span class="header-section-number">2.4</span> Backup a environment</h2>
+<pre><code>conda env export -n &lt;env&gt; &gt;  environment.yaml
 
-# &#39;requirements.txt&#39; may be used to create an environment using:
+# &#39;environment.yaml&#39; may be used to create an environment using:
 # $ conda create --name &lt;env&gt; --file &lt;this file&gt;</code></pre>
 </div>
-<div id="workflow-of-wgbs-data-analysis" class="section level2">
-<h2><span class="header-section-number">2.4</span> Workflow of WGBS data analysis</h2>
-<ol style="list-style-type: decimal">
-<li><p>Qualty control</p></li>
-<li><p>Read alignment and methylation extraction</p></li>
-<li><p>DMR identification</p></li>
-</ol>
+<div id="whats-it-look-like" class="section level2">
+<h2><span class="header-section-number">2.5</span> What’s it look like?</h2>
+<p>• It’s just a Python (3) script • A set of rules (input / output / shell or run) • Snakemake computes dependencies • Built-in text substitution!</p>
+<pre><code>rule wordcount_isles:
+    input: &quot;moby-dick.txt&quot;
+    output: &quot;moby-wordcount.txt&quot;
+    shell: &quot;wc -w {input} &gt; {output}&quot;</code></pre>
+</div>
+<div id="how-do-we-use-it" class="section level2">
+<h2><span class="header-section-number">2.6</span> How do we use it?</h2>
+<pre><code>snakemake </code></pre>
+<ul>
+<li>Look for a file called Snakemake</li>
+<li>Runs the first rule in it</li>
+<li>Both these things can be changed</li>
+</ul>
+<pre><code>snakemake -s &lt;snakemake.file&gt;</code></pre>
+</div>
+<div id="what-does-the-worflow-look-like" class="section level2">
+<h2><span class="header-section-number">2.7</span> What does the worflow look like?</h2>
+<pre><code>rule print_results:
+    input: &quot;moby-wordcount.txt&quot;
+    run:
+        with open (input, &#39;w&#39;) as in_hndl:
+            for line in in_hndl:
+                print (line)
+rule wordcount_isles:
+    input: &quot;moby-dick.txt&quot;
+    output: &quot;moby-wordcount.txt&quot;
+    shell: &quot;wc -w {input} &gt; {output}&quot;</code></pre>
 
 </div>
 </div>

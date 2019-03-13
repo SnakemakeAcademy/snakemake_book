@@ -101,3 +101,36 @@ rule report:
         """, output.html, **input)
 
 ```
+
+
+## 
+
+Add complex conditional file dependency
+
+https://bitbucket.org/snakemake/snakemake/issues/37/add-complex-conditional-file-dependency
+
+
+## PE  and SE reads
+
+
+https://bitbucket.org/snakemake/snakemake/issues/37/add-complex-conditional-file-dependency
+
+```
+def bowtie2_inputs(wildcards):
+    if (seq_type == "pe"):
+        return expand("{reads}_{strand}.fastq", strand=["R1", "R2"], reads=wildcards.reads)
+    elif (seq_type == "se"):
+        return expand("{reads}.fastq", reads=wildcards.reads)
+
+rule bowtie2:
+    input:
+        bowtie2_inputs,
+        index=bowtie2_index
+    output:
+        sam="{reads}_bowtie2.sam"
+    run:
+        if seq_type == "pe":
+            shell("bowtie2 -x {input.index} -1 {input.forward} -2 {input.reverse} -S {output.sam}")
+        elif seq_type == "se":
+            shell("bowtie2 -x {input.index} -U {input.reads} -S {output.sam}")
+```
